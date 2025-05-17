@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Image from "next/image";
 import Discord from "./socials/discord";
 import { X } from "./socials/x";
 import { ChevronDown } from "lucide-react";
 import { Developers, HeaderCommunity, HeaderEcosystem, HeaderResources } from "@/data/links";
+import Link from "next/link";
 
 const Header = () => {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
@@ -16,7 +16,7 @@ const Header = () => {
     <header className="bg-header-bg sticky z-[1000] top-0">
       <div className="max-w-[1344px] mx-auto flex items-center p-4 w-full lg:px-8">
         <div>
-          <a href="/">
+          <Link href="/">
             <Image
               src="/starknet-logo-light.svg"
               alt=""
@@ -25,7 +25,7 @@ const Header = () => {
               className="!min-w-[152px]"
               priority
             />
-          </a>
+          </Link>
         </div>
         <nav className="flex flex-row items-center bg-header-bg basis-0 lg:basis-full lg:justify-between ml-auto">
           <div>

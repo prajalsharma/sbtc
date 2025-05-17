@@ -4,6 +4,7 @@ import { Github } from "./socials/github";
 import { X } from "./socials/x";
 import { Youtube } from "./socials/youtube";
 import { Developers, Ecosystem, Community, Resources } from "@/data/links";
+import Link from "next/link";
 
 const footerSocials = [
   {
@@ -59,9 +60,9 @@ const Footer = () => {
             <a href="/legal-disclaimers/#terms-of-use">Terms Of Use</a>
           </div>
           <div className="py-10 px-7.5 md:p-0 md:-order-1">
-            <a href="/">
+            <Link href="/">
               <Image src="/starknet-logo-light.svg" alt="starknet-logo" width={152} height={35} />
-            </a>
+            </Link>
           </div>
           <div className="flex gap-6 pt-0 px-7.5 pb-15 md:p-0 text-white">
             {footerSocials.map((social, index) => (
