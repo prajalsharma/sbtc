@@ -120,6 +120,10 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@utility h-screen-minus-79 {
+  height: calc(100vh - 79px);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -136,7 +140,7 @@
 @layer components {
   .header-list-heading {
     padding: 12px 16px;
-    @apply cursor-pointer flex items-center text-secondary lg:text-white text-sm justify-between lg:justify-start;
+    @apply cursor-pointer flex items-center text-secondary lg:text-white text-base font-semibold lg:font-normal lg:text-sm justify-between lg:justify-start transition-colors;
 
     @media (min-width: 1025px) {
       padding: 13px 8px 14px 18px;
