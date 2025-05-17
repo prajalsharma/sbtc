@@ -150,19 +150,22 @@ const HeaderSubMenu = ({
   );
 };
 
-const ResourceMenu = ({
-  list,
-  isOpen = false,
-}: {
-  list: {
-    title?: string;
-    link?: string;
-    showArrow?: boolean;
-    heading?: string;
-    children?: any[];
-  }[];
-  isOpen?: boolean;
-}) => {
+type ResourceChild = {
+  icon: string;
+  title: string;
+  subtitle: string;
+  link: string;
+};
+
+type ResourceItem = {
+  title?: string;
+  link?: string;
+  showArrow?: boolean;
+  heading?: string;
+  children?: ResourceChild[];
+};
+
+const ResourceMenu = ({ list, isOpen = false }: { list: ResourceItem[]; isOpen?: boolean }) => {
   return (
     <ul
       className={`lg:block lg:absolute header-submenu bg-[#1B1B1B] rounded-[8px] lg:p-6 lg:w-max lg:right-auto transition-all lg:left-0 opacity-0 origin-top text-left top-auto scale-95 translate-z-0 group-hover:scale-100 group-hover:opacity-100 group-hover:left-auto group-hover:delay-150 group-hover:h-auto group-hover:overflow-visible
