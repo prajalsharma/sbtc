@@ -5,44 +5,44 @@ export const HeaderEcosystem = [
   { heading: "Projects and Tools" },
   {
     title: "Ecosystem Projects",
-    link: "",
+    link: "https://www.starknet.io/crypto-wallets/",
   },
   {
     title: "Crypto Wallets",
-    link: "",
+    link: "https://www.starknet.io/crypto-wallets/",
   },
   {
     title: "Bridges & on-ramps",
-    link: "",
+    link: "https://www.starknet.io/bridges-and-onramps/",
   },
   {
     title: "DeFi dApps",
-    link: "",
+    link: "https://www.starknet.io/defi-dapps/",
   },
   {
     title: "Crypto Games",
-    link: "",
+    link: "https://starknet.gg/",
   },
   {
     title: "Block Explorers & Monitoring tools",
-    link: "",
+    link: "https://www.starknet.io/block-explorers-monitoring-tools/",
   },
   {
     title: "Full-nodes & RPC services",
-    link: "",
+    link: "https://www.starknet.io/full-nodes-rpc-services/",
   },
   { heading: "Grants" },
   {
     title: "Grants Overview",
-    link: "",
+    link: "https://www.starknet.io/grants/",
   },
   {
     title: "Seed Grants",
-    link: "",
+    link: "https://www.starknet.io/grants/seed-grants/",
   },
   {
     title: "Growth Grants",
-    link: "",
+    link: "https://www.starknet.io/grants/growth-grants/",
   },
 ];
 
@@ -53,44 +53,44 @@ export const HeaderCommunity = [
   },
   {
     title: "Explore Starknet",
-    link: "",
+    link: "https://www.starknet.io/explore-starknet/",
     showArrow: false,
   },
   { heading: "Decentralization" },
   {
     title: "Governance",
-    link: "",
+    link: "https://governance.starknet.io/",
     showArrow: true,
   },
   {
     title: "Staking",
-    link: "",
+    link: "https://www.starknet.io/staking/",
     showArrow: false,
   },
   { heading: "Get Involved" },
   {
     title: "Events",
-    link: "",
+    link: "https://www.starknet.io/events/",
     showArrow: false,
   },
   {
     title: "Ambassadors Program",
-    link: "",
+    link: "https://www.starknet.io/ambassadors-program/",
     showArrow: false,
   },
   {
     title: "Jobs",
-    link: "",
+    link: "https://www.starknet.io/community-jobs/",
     showArrow: false,
   },
   {
     title: "Community Forum",
-    link: "",
+    link: "https://community.starknet.io/",
     showArrow: true,
   },
   {
     title: "Online communities",
-    link: "",
+    link: "https://www.starknet.io/online-communities/",
     showArrow: false,
   },
 ];
@@ -106,52 +106,52 @@ export const HeaderResources = [
         icon: "/layer2.svg",
         title: "Layer 2",
         subtitle: "Discover Our Layer 2 Scaling Solutions",
-        link: "",
+        link: "https://www.starknet.io/blog/layer-2-scaling-solutions/",
       },
       {
         icon: "/abstraction.svg",
         title: "Account Abstraction",
         subtitle: "How AA improves Blockchain Usability",
-        link: "",
+        link: "https://www.starknet.io/blog/account-abstraction/",
       },
       {
         icon: "/dex.svg",
         title: "DEX Aggregator",
         subtitle: "Explore the Benefits of DEX Aggregators",
-        link: "",
+        link: "https://www.starknet.io/blog/dex-aggregator/",
       },
       {
         icon: "/amm.svg",
         title: "AMM Crypto",
         subtitle: "Watch How AMMs Are Changing Crypto Trading",
-        link: "",
+        link: "https://www.starknet.io/blog/amm-crypto/",
       },
     ],
   },
   {
     title: "FAQs",
-    link: "",
+    link: "https://www.starknet.io/faqs/",
     showArrow: false,
   },
   {
     title: "Glossary",
-    link: "",
+    link: "https://www.starknet.io/glossary/",
     showArrow: false,
   },
   {
     title: "Media Kit",
-    link: "",
+    link: "https://www.starknet.io/media-kit/",
     showArrow: false,
   },
   { heading: "Network" },
   {
     title: "Dune Dashboard",
-    link: "",
+    link: "https://www.starknet.io/starknet-overview-dune/",
     showArrow: false,
   },
   {
     title: "Starknet Status Page",
-    link: "",
+    link: "https://status.starknet.io/",
     showArrow: true,
   },
 ];
@@ -160,47 +160,47 @@ export const HeaderResources = [
 export const Developers = [
   {
     title: "Developers Hub",
-    link: "",
+    link: "https://www.starknet.io/developers/",
     showArrow: false,
   },
   {
     title: "SN Stack",
-    link: "",
+    link: "https://www.starknet.io/sn-stack/",
     showArrow: false,
   },
   {
     title: "Build with AI",
-    link: "",
+    link: "https://www.starknet.io/verifiable-ai-agents/",
     showArrow: false,
   },
   {
     title: "Modular Ecosystem",
-    link: "",
+    link: "https://www.starknet.io/modular/",
     showArrow: false,
   },
   {
     title: "Tools & Resources",
-    link: "",
+    link: "https://docs.starknet.io/tools/devtools/overview/",
     showArrow: true,
   },
   {
     title: "Documentation",
-    link: "",
+    link: "https://docs.starknet.io/",
     showArrow: true,
   },
   {
     title: "Cairo Book",
-    link: "",
+    link: "https://book.cairo-lang.org/",
     showArrow: true,
   },
   {
     title: "Tutorials",
-    link: "",
+    link: "https://www.starknet.io/tutorials/",
     showArrow: false,
   },
   {
     title: "Roadmap",
-    link: "",
+    link: "https://www.starknet.io/developers/roadmap/",
     showArrow: false,
   },
 ];
@@ -208,52 +208,52 @@ export const Developers = [
 export const Ecosystem = [
   {
     title: "Crypto Bridge",
-    link: "",
+    link: "https://starkgate.starknet.io/",
     showArrow: true,
   },
   {
     title: "Ecosystem Projects",
-    link: "",
+    link: "https://www.starknet.io/dapps/",
     showArrow: false,
   },
   {
     title: "Crypto Wallets",
-    link: "",
+    link: "https://www.starknet.io/crypto-wallets/",
     showArrow: false,
   },
   {
     title: "Bridges & on-ramps",
-    link: "",
+    link: "https://www.starknet.io/bridges-and-onramps/",
     showArrow: false,
   },
   {
     title: "DeFi dApps",
-    link: "",
+    link: "https://www.starknet.io/defi-dapps/",
     showArrow: false,
   },
   {
     title: "Crypto Games",
-    link: "",
+    link: "https://starknet.gg/",
     showArrow: false,
   },
   {
     title: "Block Explorers & Monitoring tools",
-    link: "",
+    link: "https://www.starknet.io/block-explorers-monitoring-tools/",
     showArrow: false,
   },
   {
     title: "Full-nodes & RPC services",
-    link: "",
+    link: "https://www.starknet.io/full-nodes-rpc-services/",
     showArrow: false,
   },
   {
     title: "Starknet Grants",
-    link: "",
+    link: "https://www.starknet.io/grants/",
     showArrow: false,
   },
   {
     title: "Starknet Status Page",
-    link: "",
+    link: "https://status.starknet.io/",
     showArrow: true,
   },
 ];
@@ -261,42 +261,42 @@ export const Ecosystem = [
 export const Community = [
   {
     title: "Explore Starknet",
-    link: "",
+    link: "https://www.starknet.io/explore-starknet/",
     showArrow: false,
   },
   {
     title: "Events",
-    link: "",
+    link: "https://www.starknet.io/events/",
     showArrow: false,
   },
   {
     title: "Ambassadors Program",
-    link: "",
+    link: "https://www.starknet.io/ambassadors-program/",
     showArrow: false,
   },
   {
     title: "Jobs",
-    link: "",
+    link: "https://www.starknet.io/community-jobs/",
     showArrow: false,
   },
   {
     title: "Governance",
-    link: "",
+    link: "https://governance.starknet.io/",
     showArrow: true,
   },
   {
     title: "Staking",
-    link: "",
+    link: "https://www.starknet.io/staking/",
     showArrow: false,
   },
   {
     title: "Community Forum",
-    link: "",
+    link: "https://community.starknet.io/",
     showArrow: true,
   },
   {
     title: "Online communities",
-    link: "",
+    link: "https://www.starknet.io/online-communities/",
     showArrow: false,
   },
 ];
@@ -304,27 +304,27 @@ export const Community = [
 export const Resources = [
   {
     title: "Blog",
-    link: "",
+    link: "https://www.starknet.io/blog/",
     showArrow: false,
   },
   {
     title: "FAQs",
-    link: "",
+    link: "https://www.starknet.io/faqs/",
     showArrow: false,
   },
   {
     title: "Glossary",
-    link: "",
+    link: "https://www.starknet.io/glossary/",
     showArrow: false,
   },
   {
     title: "Media Kit",
-    link: "",
+    link: "https://www.starknet.io/media-kit/",
     showArrow: false,
   },
   {
     title: "Account Abstraction",
-    link: "",
+    link: "https://www.starknet.io/blog/account-abstraction/",
     showArrow: false,
   },
 ];
