@@ -108,11 +108,11 @@ export default Header;
 
 type NavMenuItemProps = {
   label: string;
-  list: any[];
+  list: ResourceItem[];
   isDesktop: boolean;
   openList?: string | null;
   setOpenList?: (val: string | null) => void;
-  submenuComponent?: React.ComponentType<{ list: any[]; isOpen?: boolean }>;
+  submenuComponent?: React.ComponentType<{ list: ResourceItem[]; isOpen?: boolean }>;
 };
 
 const NavMenuItem = ({
