@@ -8,7 +8,7 @@ type LocationFilterProps = {
 
 const LocationFilter = ({ searchLocation, setSearchLocation }: LocationFilterProps) => {
   return (
-    <div className="rounded py-2 pr-3 pl-10 relative lg:flex-1 ring ring-secondary/20 ">
+    <div className="rounded-sm py-2 pr-3 pl-10 relative lg:flex-1 border border-[#333] ">
       <MapPin className="text-secondary size-[1.375rem] absolute left-4 top-3.5" />
       <Input
         type="text"

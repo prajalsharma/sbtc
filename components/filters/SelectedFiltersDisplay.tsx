@@ -94,7 +94,7 @@ const FilterBadge = ({
 }) => (
   <Badge
     key={value}
-    className="bg-header-bg/50 text-hover text-[15px] px-3 py-1 border border-hover rounded-sm">
+    className="bg-header-bg/50 text-soft-blue text-[15px] px-3 py-1 border border-soft-blue rounded-sm">
     {options.find((o) => o.value === value)?.label || value}
     <X className="ml-2 h-4 w-4 cursor-pointer" onClick={() => onRemove(value)} />
   </Badge>

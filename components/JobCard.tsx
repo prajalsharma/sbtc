@@ -70,9 +70,9 @@ const Card = ({ job }: JobProps) => {
               )}
             </div>
 
-            <div className="flex items-center gap-2 text-muted-foreground text-[15px] max-w-2xl">
+            {/* <div className="flex items-center gap-2 text-muted-foreground text-[15px] max-w-2xl">
               <p>{job.jobDescription}</p>
-            </div>
+            </div> */}
 
             <div className="flex items-center gap-2 text-muted-foreground text-sm">
               {job.jobType === "Remote" && !excludedValues.includes(job.jobType) && (
@@ -106,7 +106,7 @@ const Card = ({ job }: JobProps) => {
             <Link
               href={jobDescriptionLink}
               target="_blank"
-              className="text-lg text-hover flex items-center gap-1 font-bold hover:text-hover/50 transition-colors">
+              className="text-lg text-soft-blue flex items-center gap-1 font-bold hover:text-soft-blue/50 transition-colors">
               <ArrowRight className="inline size-5" />
               Apply
             </Link>

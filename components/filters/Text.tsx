@@ -8,7 +8,7 @@ type TextFilterProps = {
 
 const TextFilter = ({ searchTitle, setSearchTitle }: TextFilterProps) => {
   return (
-    <div className="rounded py-2 pr-3 pl-10 relative lg:flex-1 ring ring-secondary/20">
+    <div className="rounded-sm py-2 pr-3 pl-10 relative lg:flex-1 border border-[#333]">
       <Search className="text-secondary size-[22px] absolute left-4 top-3.5" />
       <Input
         type="text"
