@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { XCircle, XIcon } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { useFilters } from "@/context/FiltersContext";
@@ -31,6 +31,7 @@ const SelectedFiltersDisplay: React.FC<Options> = ({
   const handleClearAll = () => {
     setSelectedJobFunction([]);
     setSelectedJobType([]);
+    setSelectedExperience([]);
   };
 
   const handleRemoveJobFunction = (value: string) => {
@@ -48,46 +49,36 @@ const SelectedFiltersDisplay: React.FC<Options> = ({
   return (
     <div className="flex flex-wrap gap-1.5">
       {selectedJobFunction.map((value) => (
-        <Badge
+        <FilterBadge
           key={value}
-          className="bg-transparent text-foreground border-foreground hover:bg-transparent text-sm my-1">
-          {getOptionLabel(value, jobFunctionOptions)}
-          <XCircle
-            className="ml-2 h-4 w-4 cursor-pointer"
-            onClick={() => handleRemoveJobFunction(value)}
-          />
-        </Badge>
+          value={value}
+          options={jobFunctionOptions}
+          onRemove={handleRemoveJobFunction}
+        />
       ))}
       {selectedJobType.map((value) => (
-        <Badge
+        <FilterBadge
           key={value}
-          className="bg-transparent text-foreground border-foreground hover:bg-transparent text-sm my-1">
-          {getOptionLabel(value, jobTypeOptions)}
-          <XCircle
-            className="ml-2 h-4 w-4 cursor-pointer"
-            onClick={() => handleRemoveJobType(value)}
-          />
-        </Badge>
+          value={value}
+          options={jobTypeOptions}
+          onRemove={handleRemoveJobType}
+        />
       ))}
       {selectedExperience.map((value) => (
-        <Badge
+        <FilterBadge
           key={value}
-          className="bg-transparent text-foreground border-foreground hover:bg-transparent text-sm my-1">
-          {getOptionLabel(value, experienceOptions)}
-          <XCircle
-            className="ml-2 h-4 w-4 cursor-pointer"
-            onClick={() => handleRemoveExperience(value)}
-          />
-        </Badge>
+          value={value}
+          options={experienceOptions}
+          onRemove={handleRemoveExperience}
+        />
       ))}
       {(selectedJobFunction.length > 0 ||
         selectedJobType.length > 0 ||
         selectedExperience.length > 0) && (
         <Button
           onClick={handleClearAll}
-          className="group flex items-center justify-between bg-transparent text-black/40 h-auto py-1 hover:bg-transparent hover:text-black hover:ring-inset hover:ring-1 hover:ring-black transition cursor-pointer">
-          Clear all{" "}
-          <XIcon className="h-4 cursor-pointer text-black/40 group-hover:text-black transition" />
+          className="group flex items-center justify-between bg-transparent text-muted-foreground h-auto py-1 transition cursor-pointer hover:bg-transparent hover:text-muted-foreground/80">
+          Clear all
         </Button>
       )}
     </div>
@@ -95,3 +86,20 @@ const SelectedFiltersDisplay: React.FC<Options> = ({
 };
 
 export default SelectedFiltersDisplay;
+
+const FilterBadge = ({
+  value,
+  options,
+  onRemove,
+}: {
+  value: string;
+  options: { value: string; label: string }[];
+  onRemove: (value: string) => void;
+}) => (
+  <Badge
+    key={value}
+    className="bg-header-bg/50 text-hover text-[15px] px-3 py-1 border border-hover rounded-sm">
+    {options.find((o) => o.value === value)?.label || value}
+    <X className="ml-2 h-4 w-4 cursor-pointer" onClick={() => onRemove(value)} />
+  </Badge>
+);

@@ -179,50 +179,47 @@ export const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>
               {...props}
               onClick={handleTogglePopover}
               className={cn(
-                "flex w-full p-1 rounded-md border min-h-10 h-auto items-center justify-between bg-inherit hover:bg-inherit",
+                "flex w-full p-1 rounded ring-[1.5px] ring-secondary/20 min-h-10 h-auto items-center justify-between bg-inherit hover:bg-inherit",
                 className
               )}>
               {selectedValues.length >= 0 && (
                 <div className="flex items-center justify-between w-full mx-auto">
-                  <span className="text-sm text-muted-foreground mx-3">{placeholder}</span>
-                  <ChevronDown className="h-4 cursor-pointer text-muted-foreground" />
+                  <span className="text-sm text-secondary/80 mx-3">{placeholder}</span>
+                  <ChevronDown className="mr-3 h-4 cursor-pointer text-secondary/80" />
                 </div>
               )}
             </Button>
           </PopoverTrigger>
           <PopoverContent
-            className="w-(--radix-popover-trigger-width) p-0"
+            className="w-(--radix-popover-trigger-width) p-0 border-none bg-primary text-white"
             align="start"
             onEscapeKeyDown={() => setIsPopoverOpen(false)}>
-            <Command>
+            <Command className="bg-primary text-white ring ring-secondary/20 rounded-sm">
               <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup>
+                <CommandGroup className="px-0.5">
                   {options.map((option) => {
                     const isSelected = selectedValues.includes(option.value);
                     return (
                       <CommandItem
                         key={option.value}
                         onSelect={() => toggleOption(option.value)}
-                        className="cursor-pointer">
+                        className="cursor-pointer text-secondary/80">
                         <div
                           className={cn(
-                            "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
+                            "mr-2 flex h-4 w-4 items-center justify-center rounded-xs border border-secondary/80",
                             isSelected
-                              ? "bg-primary text-primary-foreground"
+                              ? "bg-secondary/80 text-primary-foreground"
                               : "opacity-50 [&_svg]:invisible"
                           )}>
-                          <CheckIcon className="h-4 w-4" />
+                          <CheckIcon className="h-4 w-4 text-[#1b1b1b]" />
                         </div>
-                        {option.icon && (
-                          <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-                        )}
-                        <span>{option.label}</span>
+                        {option.icon && <option.icon className="mr-2 h-4 w-4 " />}
+                        <span className="">{option.label}</span>
                       </CommandItem>
                     );
                   })}
                 </CommandGroup>
-                <CommandSeparator />
               </CommandList>
             </Command>
           </PopoverContent>
