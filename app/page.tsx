@@ -9,6 +9,7 @@ import TextFilter from "@/components/filters/Text";
 import Card from "@/components/JobCard";
 import TabSwitcher from "@/components/TabSwitcher";
 import { mockJobs } from "@/data/mockJobs";
+import { ChevronDown } from "lucide-react";
 
 interface Job {
   _id: string;
@@ -21,6 +22,7 @@ interface Job {
   project: string;
   image: string;
   exprerience: string;
+  salary?: string;
 }
 
 export default function Home() {
@@ -41,7 +43,6 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    // Simulate API loading
     setTimeout(() => {
       setAllJobs(mockJobs);
       setFilteredJobs(mockJobs);
@@ -145,7 +146,7 @@ export default function Home() {
 
       <div className="py-12 w-full md:w-[90%] lg:w-[85%] mx-auto">
         <div className="mx-auto flex flex-col gap-14 ">
-          <div className="bg-[#1b1b1b] border border-[#333] rounded-sm flex flex-col shadow-lg shadow-[#1b1b1b]/60 p-6 pt-8">
+          <div className="bg-[#1b1b1b]  border border-[#333] shadow-lg rounded-sm flex flex-col shadow-[#1b1b1b]/60 p-6 pt-8">
             <div className="flex flex-col gap-4 lg:flex-row">
               <TextFilter searchTitle={searchTitle} setSearchTitle={setSearchTitle} />
               <LocationFilter
@@ -153,13 +154,13 @@ export default function Home() {
                 setSearchLocation={setSearchLocation}
               />
             </div>
-            <div className="flex flex-col py-3 w-full gap-4 ">
+            <div className="flex flex-col py-3 w-full gap-4 pt-6">
               <MultiSelectFilter />
             </div>
           </div>
         </div>
       </div>
-      <div className="px-2">
+      <div className="lg:px-2">
         <div className="flex flex-col gap-5 w-full md:w-[90%] lg:w-[85%] mx-auto">
           {loading ? (
             <>
@@ -172,9 +173,17 @@ export default function Home() {
             </>
           ) : (
             <>
-              <p className="text-base text-secondary">
-                <span className="font-bold">{filteredjobs.length}</span> jobs
-              </p>
+              <div className="flex justify-between items-center">
+                <p className="text-base text-secondary">
+                  Showing
+                  <span className="font-bold"> {filteredjobs.length}</span> jobs
+                </p>
+                <button className="text-sm text-secondary/80">
+                  <span className="flex items-center gap-2">
+                    Most Recent <ChevronDown className="h-4 w-4 text-secondary/80" />
+                  </span>
+                </button>
+              </div>
               <div className="flex flex-col gap-3">
                 {filteredjobs.map((job) => (
                   <Card key={job._id} job={job} />
