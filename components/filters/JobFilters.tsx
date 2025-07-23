@@ -39,28 +39,32 @@ const MultiSelectFilter = () => {
   } = useFilters();
   return (
     <>
-      <div className="w-full md:w-[24.05%] flex flex-col md:flex-row gap-3 relative items-center justify-around">
+      <div className="w-full flex flex-col md:flex-row gap-3 relative items-center justify-start">
         <MultiSelect
           options={jobFunctionOptions}
           onValueChange={setSelectedJobFunction}
           defaultValue={selectedJobFunction}
-          className="w-full "
+          className="md:w-[24.05%]"
           placeholder="Job Function"
         />
         <MultiSelect
           options={jobTypeOptions}
           onValueChange={setSelectedJobType}
           defaultValue={selectedJobType}
-          className="w-full "
+          className="md:w-[24.05%]"
           placeholder="Job Type"
         />
         <MultiSelect
           options={experienceOptions}
           onValueChange={setSelectedExperience}
           defaultValue={selectedExperience}
-          className=" w-full "
+          className="md:w-[24.05%]"
           placeholder="Experience"
         />
+        <button className="md:w-[12%] p-1 rounded relative h-auto bg-inherit self-start cursor-pointer group text-sm">
+          More Filters
+          <span className="absolute w-full md:w-[70%] left-1/2 bottom-0 -translate-x-1/2 h-0.5 bg-secondary/80 opacity-0 group-hover:opacity-100 transition-opacity" />
+        </button>
       </div>
       <div className="flex flex-col md:flex-row items-center w-full">
         <SelectedFiltersDisplay
