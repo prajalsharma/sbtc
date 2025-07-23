@@ -13,7 +13,7 @@ interface Job {
   jobDescription: string;
   project: string;
   image: string;
-  exprerience: string;
+  experience: string;
   salary?: string; // Optional field for salary
 }
 
@@ -60,9 +60,9 @@ const Card = ({ job }: JobProps) => {
                     .join(" ")}
                 </span>
               )}
-              {job.exprerience && !excludedValues.includes(job.exprerience) && (
+              {job.experience && !excludedValues.includes(job.experience) && (
                 <span className="px-3 py-1 text-xs font-medium bg-secondary/10 text-secondary rounded-sm">
-                  {job.exprerience
+                  {job.experience
                     .split("_")
                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                     .join(" ")}

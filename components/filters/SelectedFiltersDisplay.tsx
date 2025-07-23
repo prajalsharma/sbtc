@@ -23,10 +23,6 @@ const SelectedFiltersDisplay: React.FC<Options> = ({
     selectedExperience,
     setSelectedExperience,
   } = useFilters();
-  const getOptionLabel = (value: string, options: { value: string; label: string }[]) => {
-    const option = options.find((o) => o.value === value);
-    return option ? option.label : value;
-  };
 
   const handleClearAll = () => {
     setSelectedJobFunction([]);

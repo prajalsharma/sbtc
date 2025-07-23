@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFilters } from "@/context/FiltersContext";
 import MultiSelectFilter from "@/components/filters/JobFilters";
@@ -21,7 +21,7 @@ interface Job {
   jobDescription: string;
   project: string;
   image: string;
-  exprerience: string;
+  experience: string;
   salary?: string;
 }
 
@@ -41,6 +41,64 @@ export default function Home() {
   const [filteredjobs, setFilteredJobs] = useState<Job[]>([]);
   const [allJobs, setAllJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+
+  const handleFilters = useCallback(
+    (
+      jobs: Job[],
+      selectedJobFunctions: string[],
+      selectedJobTypes: string[],
+      selectedExperience: string[],
+      location: string,
+      title: string
+    ) => {
+      if (
+        selectedJobFunctions.length === 0 &&
+        selectedJobTypes.length === 0 &&
+        selectedExperience.length === 0 &&
+        !location &&
+        !title
+      ) {
+        setFilteredJobs(jobs);
+        return;
+      }
+
+      const filtered = jobs.filter((job) => {
+        const matchesJobFunction =
+          selectedJobFunctions.length > 0 ? selectedJobFunctions.includes(job.jobFunction) : true;
+
+        const matchesJobType =
+          selectedJobTypes.length > 0
+            ? selectedJobTypes.some((type) => {
+                if (type === "Remote") {
+                  return job.jobType === "Remote" && job.hybrid === "false";
+                } else {
+                  return job.hybrid === "true";
+                }
+              })
+            : true;
+
+        const matchesExperience =
+          selectedExperience.length > 0 ? selectedExperience.includes(job.experience) : true;
+
+        const matchesLocation = location
+          ? job.location.toLowerCase().includes(location.toLowerCase())
+          : true;
+
+        const matchesTitle = title ? job.role.toLowerCase().includes(title.toLowerCase()) : true;
+
+        return (
+          matchesJobFunction &&
+          matchesJobType &&
+          matchesExperience &&
+          matchesLocation &&
+          matchesTitle
+        );
+      });
+
+      setFilteredJobs(filtered);
+    },
+    [setFilteredJobs]
+  );
 
   useEffect(() => {
     setTimeout(() => {
@@ -66,6 +124,7 @@ export default function Home() {
       applyFilters();
     }
   }, [
+    handleFilters,
     allJobs,
     selectedJobFunction,
     selectedJobType,
@@ -73,70 +132,6 @@ export default function Home() {
     searchLocation,
     searchTitle,
   ]);
-
-  const handleFilters = (
-    jobs: Job[],
-    selectedJobFunctions: string[],
-    selectedJobTypes: string[],
-    selectedExperience: string[],
-    location: string,
-    title: string
-  ) => {
-    if (
-      selectedJobFunctions.length === 0 &&
-      selectedJobTypes.length === 0 &&
-      selectedExperience.length === 0 &&
-      !location &&
-      !title
-    ) {
-      setFilteredJobs(jobs);
-      return;
-    }
-
-    const filtered = jobs.filter((job) => {
-      const matchesJobFunction =
-        selectedJobFunctions.length > 0 ? selectedJobFunctions.includes(job.jobFunction) : true;
-
-      const matchesJobType =
-        selectedJobTypes.length > 0
-          ? selectedJobTypes.some((type) => {
-              if (type === "Remote") {
-                return job.jobType === "Remote" && job.hybrid === "false";
-              } else {
-                return job.hybrid === "true";
-              }
-            })
-          : true;
-
-      const matchesExperience =
-        selectedExperience.length > 0 ? selectedExperience.includes(job.exprerience) : true;
-
-      const matchesLocation = location
-        ? job.location.toLowerCase().includes(location.toLowerCase())
-        : true;
-
-      const matchesTitle = searchTitle
-        ? job.role.toLowerCase().includes(title.toLowerCase())
-        : true;
-
-      return (
-        matchesJobFunction && matchesJobType && matchesExperience && matchesLocation && matchesTitle
-      );
-    });
-
-    setFilteredJobs(filtered);
-  };
-
-  useEffect(() => {
-    handleFilters(
-      allJobs,
-      selectedJobFunction,
-      selectedJobType,
-      selectedExperience,
-      searchLocation,
-      searchTitle
-    );
-  }, [selectedJobFunction, selectedJobType, selectedExperience, searchLocation, searchTitle]);
 
   return (
     <div className="flex flex-col p-4 text-secondary">

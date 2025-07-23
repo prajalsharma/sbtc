@@ -10,7 +10,7 @@ export const mockJobs = [
       "We're looking for a Senior Frontend Developer with expertise in React, TypeScript, and modern web technologies.",
     project: "Starknet DeFi",
     image: "/abstraction.svg",
-    exprerience: "senior_level",
+    experience: "senior_level",
     salary: "120000",
   },
   {
@@ -23,7 +23,7 @@ export const mockJobs = [
     jobDescription: "Join our team to build next-generation Layer 2 solutions on Starknet.",
     project: "Layer 2",
     image: "/layer2.svg",
-    exprerience: "mid_level",
+    experience: "mid_level",
     salary: "80000",
   },
   {
@@ -36,7 +36,7 @@ export const mockJobs = [
     jobDescription: "Drive product marketing strategies for our DeFi solutions.",
     project: "AMM",
     image: "/amm.svg",
-    exprerience: "senior_level",
+    experience: "senior_level",
     salary: "100000",
   },
   {
@@ -49,7 +49,7 @@ export const mockJobs = [
     jobDescription: "Develop and audit smart contracts for our DeFi protocols.",
     project: "DEX",
     image: "/dex.svg",
-    exprerience: "entry_level",
+    experience: "entry_level",
     salary: "60000",
   },
   {
@@ -62,7 +62,7 @@ export const mockJobs = [
     jobDescription: "Build and maintain our cloud infrastructure and CI/CD pipelines.",
     project: "Infrastructure",
     image: "/abstraction.svg",
-    exprerience: "mid_level",
+    experience: "mid_level",
     salary: "120000",
   },
   {
@@ -75,7 +75,7 @@ export const mockJobs = [
     jobDescription: "Create intuitive and beautiful interfaces for our DeFi products.",
     project: "Design Systems",
     image: "/abstraction.svg",
-    exprerience: "mid_level",
+    experience: "mid_level",
     salary: "90000",
   },
 ];
