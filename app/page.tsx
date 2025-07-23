@@ -7,6 +7,8 @@ import MultiSelectFilter from "@/components/filters/JobFilters";
 import LocationFilter from "@/components/filters/Location";
 import TextFilter from "@/components/filters/Text";
 import Card from "@/components/JobCard";
+import TabSwitcher from "@/components/TabSwitcher";
+import { mockJobs } from "@/data/mockJobs";
 
 interface Job {
   _id: string;
@@ -22,6 +24,8 @@ interface Job {
 }
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("Jobs");
+
   const {
     selectedJobFunction,
     selectedJobType,
@@ -37,26 +41,12 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const fetchAllJobs = async () => {
-      let allJobs: Job[] = [];
-
-      try {
-        const response = await fetch("/api/jobs");
-        if (response.ok) {
-          const data = await response.json();
-
-          allJobs = data.btcJobs;
-        }
-      } catch (error) {
-        console.error("Error fetching jobs:", error);
-      }
-
-      setAllJobs(allJobs);
-      setFilteredJobs(allJobs);
+    // Simulate API loading
+    setTimeout(() => {
+      setAllJobs(mockJobs);
+      setFilteredJobs(mockJobs);
       setLoading(false);
-    };
-
-    fetchAllJobs();
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -148,31 +138,29 @@ export default function Home() {
   }, [selectedJobFunction, selectedJobType, selectedExperience, searchLocation, searchTitle]);
 
   return (
-    <div className="flex flex-col items-center p-4 text-secondary">
-      <div className="text-center py-8 md:py-16">
-        <h1 className="text-5xl md:text-6xl font-medium">Find your Dream Job</h1>
-        <p className="mt-2 text-secondary/80 text-lg">
-          Discover exciting job opportunities tailored to your skills for best results.
-        </p>
+    <div className="flex flex-col p-4 text-secondary">
+      <div className="w-full max-w-6xl mx-auto px-4 md:px-8">
+        <TabSwitcher activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
-      <div className="py-12 w-full md:w-[90%] lg:w-[85%]">
+
+      <div className="py-12 w-full md:w-[90%] lg:w-[85%] mx-auto">
         <div className="mx-auto flex flex-col gap-14 ">
-          <div className="bg-white border-[1.5px] rounded-sm flex flex-col">
-            <div className="flex flex-col lg:gap-4 lg:flex-row divide-y-[1.5px] lg:divide-x-[1.5px] lg:divide-y-0 border-b">
+          <div className="bg-[#1b1b1b] border border-[#333] rounded-sm flex flex-col shadow-lg shadow-[#1b1b1b]/60 p-6 pt-8">
+            <div className="flex flex-col gap-4 lg:flex-row">
               <TextFilter searchTitle={searchTitle} setSearchTitle={setSearchTitle} />
               <LocationFilter
                 searchLocation={searchLocation}
                 setSearchLocation={setSearchLocation}
               />
             </div>
-            <div className="flex flex-col px-4 py-3 w-full gap-4 ">
+            <div className="flex flex-col py-3 w-full gap-4 ">
               <MultiSelectFilter />
             </div>
           </div>
         </div>
       </div>
-      <div className="pt-10 px-7 md:px-12">
-        <div className="flex flex-col gap-5 mx-auto max-w-[70.75rem]">
+      <div className="px-2">
+        <div className="flex flex-col gap-5 w-full md:w-[90%] lg:w-[85%] mx-auto">
           {loading ? (
             <>
               <Skeleton className="h-[1.6rem] w-[10.2rem]" />
@@ -184,8 +172,8 @@ export default function Home() {
             </>
           ) : (
             <>
-              <p className="text-sm text-slate-800">
-                Showing <span className="font-bold">{filteredjobs.length}</span> jobs
+              <p className="text-base text-secondary">
+                <span className="font-bold">{filteredjobs.length}</span> jobs
               </p>
               <div className="flex flex-col gap-3">
                 {filteredjobs.map((job) => (

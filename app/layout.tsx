@@ -26,7 +26,19 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased bg-body-background`}>
         <FiltersProvider>
           <Header />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen">
+            <div className="flex flex-col items-center p-4 text-secondary">
+              <div className="text-center py-16 md:pt-24 text-white">
+                <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">
+                  Find your Dream Job
+                </h1>
+                <p className="mt-2 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+                  Discover exciting job opportunities tailored to your skills for best results.
+                </p>
+              </div>
+            </div>
+            {children}
+          </main>
           <Footer />
         </FiltersProvider>
       </body>

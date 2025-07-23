@@ -6,9 +6,9 @@
 @theme {
   --color-header-bg: #121212;
   --color-body-background: #0b0b0b;
-  --color-text-secondary: #ccccccff;
+  --color-subtle-white: #ccccccff;
   --color-divider: #313131ff;
-  --color-hover: #5c94ff;
+  --color-hover: #afcaff;
 }
 
 @theme inline {
@@ -159,4 +159,27 @@
     font-weight: 500;
     transition: none;
   }
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-header-bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-hover);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(var(--color-hover), 0.6);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-hover) var(--color-header-bg);
 }
