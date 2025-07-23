@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const tabs = ["Jobs", "Companies"];
 
@@ -14,9 +15,9 @@ export default function TabSwitcher({
   return (
     <div className="flex gap-6 border-border pb-2 text-muted-foreground justify-center items-center">
       {tabs.map((tab) => (
-        <a
+        <Link
           key={tab}
-          href={`${tab.toLowerCase()}`}
+          href={tab === "Jobs" ? "/" : "/companies"}
           onClick={() => onTabChange(tab)}
           className={cn(
             "text-lg font-medium px-2 transition-colors duration-200",
@@ -25,7 +26,7 @@ export default function TabSwitcher({
               : "hover:text-primary-foreground"
           )}>
           {tab}
-        </a>
+        </Link>
       ))}
     </div>
   );
