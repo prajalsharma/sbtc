@@ -16,8 +16,9 @@ const jobFunctionOptions = [
 ];
 
 const jobTypeOptions = [
-  { value: "hybrid", label: "On-Site" },
   { value: "Remote", label: "Remote" },
+  { value: "On-site", label: "On-site" },
+  { value: "Hybrid", label: "Hybrid" },
 ];
 
 const experienceOptions = [

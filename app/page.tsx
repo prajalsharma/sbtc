@@ -8,7 +8,6 @@ import LocationFilter from "@/components/filters/Location";
 import TextFilter from "@/components/filters/Text";
 import Card from "@/components/JobCard";
 import TabSwitcher from "@/components/TabSwitcher";
-import { mockJobs } from "@/data/mockJobs";
 import { ChevronDown } from "lucide-react";
 
 interface Job {
@@ -19,10 +18,13 @@ interface Job {
   hybrid: string;
   jobFunction: string;
   jobDescription: string;
+  jobURL: string;
   project: string;
   image: string;
   experience: string;
   salary?: string;
+  createdAt?: string; // Added timestamp fields
+  updatedAt?: string;
 }
 
 export default function Home() {
@@ -41,6 +43,29 @@ export default function Home() {
   const [filteredjobs, setFilteredJobs] = useState<Job[]>([]);
   const [allJobs, setAllJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const fetchAllJobs = async () => {
+      let allJobs: Job[] = [];
+
+      try {
+        const response = await fetch("/api/jobs");
+        if (response.ok) {
+          const data = await response.json();
+
+          allJobs = data.jobs;
+        }
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+      }
+
+      setAllJobs(allJobs);
+      setFilteredJobs(allJobs);
+      setLoading(false);
+    };
+
+    fetchAllJobs();
+  }, []);
 
   const handleFilters = useCallback(
     (
@@ -70,10 +95,13 @@ export default function Home() {
           selectedJobTypes.length > 0
             ? selectedJobTypes.some((type) => {
                 if (type === "Remote") {
-                  return job.jobType === "Remote" && job.hybrid === "false";
-                } else {
-                  return job.hybrid === "true";
+                  return job.jobType === "remote";
+                } else if (type === "On-site") {
+                  return job.jobType === "on-site";
+                } else if (type === "Hybrid") {
+                  return job.jobType === "true";
                 }
+                return false;
               })
             : true;
 
@@ -99,14 +127,6 @@ export default function Home() {
     },
     [setFilteredJobs]
   );
-
-  useEffect(() => {
-    setTimeout(() => {
-      setAllJobs(mockJobs);
-      setFilteredJobs(mockJobs);
-      setLoading(false);
-    }, 1000);
-  }, []);
 
   useEffect(() => {
     const applyFilters = () => {
