@@ -19,17 +19,19 @@ export default function CompanyCard({ company }: CompanyCardProps) {
   return (
     <Link href="#">
       <div className="bg-[#1b1b1b] border border-[#333] p-6 rounded-sm hover:border-primary-foreground transition-colors duration-200 h-full shadow-sm shadow-[#333]/50">
-        <div className="flex flex-col gap-4">
-          <div className="relative h-12 w-12">
-            <Image src={company.image} alt={company.name} fill className="object-contain" />
+        <div className="flex flex-col gap-4 h-full justify-between">
+          <div className="flex gap-4 flex-col">
+            <div className="relative h-12 w-12">
+              <Image src={company.image} alt={company.name} fill className="object-contain" />
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-secondary">{company.name}</h3>
+              <p className="text-secondary/80 text-sm line-clamp-3">{company.description}</p>
+            </div>
           </div>
 
-          <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-secondary">{company.name}</h3>
-            <p className="text-secondary/80 text-sm line-clamp-3">{company.description}</p>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 ">
             {company.industry.map((tag) => (
               <span key={tag} className="bg-[#333] px-2 py-1 text-xs rounded text-secondary/80">
                 {tag}

@@ -2,8 +2,7 @@ export const mockCompanies = [
   {
     _id: "1",
     name: "Alchemy",
-    description:
-      "Powerful APIs, SDKs, and tools to build and scale your web3 app with ease.",
+    description: "Powerful APIs, SDKs, and tools to build and scale your web3 app with ease.",
     size: "100-1000 employees",
     industry: ["Infra & Tools"],
     location: ["San Francisco, California", "New York City Area"],
@@ -43,7 +42,8 @@ export const mockCompanies = [
   {
     _id: "5",
     name: "Immunefi",
-    description: "Onchain security network with bug bounties and audits protecting billions in web3/DeFi projects.",
+    description:
+      "Onchain security network with bug bounties and audits protecting billions in web3/DeFi projects.",
     size: "11-50 employees",
     industry: ["Blockchain Security"],
     location: ["Singapore"],
@@ -52,7 +52,8 @@ export const mockCompanies = [
   {
     _id: "6",
     name: "Ritual",
-    description: "The Ritual chain is the first blockchain custom-built to support AI-native operations, designed from the ground up to enable a new class of applications at the intersection of crypto and AI.",
+    description:
+      "The Ritual chain is the first blockchain custom-built to support AI-native operations, designed from the ground up to enable a new class of applications at the intersection of crypto and AI.",
     size: "11-50 employees",
     industry: ["AI"],
     location: ["Noida, India"],
@@ -61,7 +62,8 @@ export const mockCompanies = [
   {
     _id: "7",
     name: "Braavos",
-    description: "Crypto wallet for StarkNet offering secure, user-friendly asset management and dApp connections.",
+    description:
+      "Crypto wallet for StarkNet offering secure, user-friendly asset management and dApp connections.",
     size: "11-50 employees",
     industry: ["Crypto Wallet", "Blockchain"],
     location: ["Tel Aviv, Israel"],
@@ -70,7 +72,8 @@ export const mockCompanies = [
   {
     _id: "8",
     name: "Zellic",
-    description: "Web3 cybersecurity firm providing audits and cryptography reviews to secure DeFi and blockchain protocols.",
+    description:
+      "Web3 cybersecurity firm providing audits and cryptography reviews to secure DeFi and blockchain protocols.",
     size: "51-200 employees",
     industry: ["Blockchain Security"],
     location: ["Remote (distributed)"],
@@ -79,16 +82,18 @@ export const mockCompanies = [
   {
     _id: "9",
     name: "Spiko",
-    description: "API-driven treasury yield platform for European businesses optimizing cash management and returns.",
+    description:
+      "API-driven treasury yield platform for European businesses optimizing cash management and returns.",
     size: "11-50 employees",
-    industry: ["Defi"],
+    industry: ["DeFi"],
     location: ["Paris, France"],
-    image: "https://pbs.twimg.com/profile_images/1919771760875937792/IIKL6y3R_400x400.jpg"
+    image: "https://pbs.twimg.com/profile_images/1919771760875937792/IIKL6y3R_400x400.jpg",
   },
   {
     _id: "10",
     name: "Software Mansion",
-    description: "Polish software dev company building scalable apps and contributing to open-source projects.",
+    description:
+      "Polish software dev company building scalable apps and contributing to open-source projects.",
     size: "201-500 employees",
     industry: ["Software Development"],
     location: ["Kraków, Poland"],
@@ -97,7 +102,8 @@ export const mockCompanies = [
   {
     _id: "11",
     name: "Hypernative",
-    description: "Web3 security platform focusing on real-time threat detection and attack prevention.",
+    description:
+      "Web3 security platform focusing on real-time threat detection and attack prevention.",
     size: "51-200 employees",
     industry: ["Security Software"],
     location: ["Herzliya, Israel"],
@@ -106,7 +112,8 @@ export const mockCompanies = [
   {
     _id: "12",
     name: "QuickNode",
-    description: "Cloud blockchain infrastructure service providing fast APIs and tooling for Web3 developers and enterprises.",
+    description:
+      "Cloud blockchain infrastructure service providing fast APIs and tooling for Web3 developers and enterprises.",
     size: "100-200 employees",
     industry: ["Blockchain Infrastructure"],
     location: ["Miami, USA (remote)"],
@@ -115,7 +122,8 @@ export const mockCompanies = [
   {
     _id: "13",
     name: "GetBlock",
-    description: "Blockchain node and API service offering reliable access to multiple chains for decentralized app development.",
+    description:
+      "Blockchain node and API service offering reliable access to multiple chains for decentralized app development.",
     size: "51-200 employees",
     industry: ["Blockchain", "API Services"],
     location: ["Global (HQ Cyprus)"],

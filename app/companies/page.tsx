@@ -22,7 +22,11 @@ export default function CompaniesPage() {
 
     const matchesIndustries =
       selectedIndustries.length === 0 ||
-      company.industry.some((tag) => selectedIndustries.includes(tag));
+      company.industry.some((companyIndustry) =>
+        selectedIndustries.some((selectedIndustry) =>
+          companyIndustry.toLowerCase().includes(selectedIndustry.toLowerCase())
+        )
+      );
 
     return matchesSearch && matchesIndustries;
   });

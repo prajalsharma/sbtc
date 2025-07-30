@@ -6,18 +6,14 @@ interface IndustryFilterProps {
 }
 
 const industries = [
-  "FinTech",
+  "AI",
+  "API Services",
+  "Blockchain",
+  "Blockchain Security",
   "DeFi",
-  "Infrastructure",
-  "Crypto",
-  "NFT",
-  "Gaming",
-  "Web3",
-  "Exchange",
-  "Enterprise Software",
+  "Infra & Tools",
+  "RWA",
   "Wallet",
-  "Security",
-  "Payments",
 ];
 
 export default function IndustryFilter({
