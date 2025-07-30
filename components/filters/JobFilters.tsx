@@ -20,19 +20,11 @@ const jobTypeOptions = [
   { value: "Hybrid", label: "Hybrid" },
 ];
 
-//
-
 import { useFilters } from "@/context/FiltersContext";
 
 const MultiSelectFilter = () => {
-  const {
-    selectedJobFunction,
-    setSelectedJobFunction,
-    selectedJobType,
-    setSelectedJobType,
-    selectedExperience,
-    setSelectedExperience,
-  } = useFilters();
+  const { selectedJobFunction, setSelectedJobFunction, selectedJobType, setSelectedJobType } =
+    useFilters();
   return (
     <>
       <div className="w-full flex flex-col md:flex-row gap-3 relative justify-start">

@@ -34,10 +34,6 @@ const SelectedFiltersDisplay: React.FC<Options> = ({ jobFunctionOptions, jobType
     setSelectedJobType((prev) => prev.filter((item) => item !== value));
   };
 
-  const handleRemoveExperience = (value: string) => {
-    setSelectedExperience((prev) => prev.filter((item) => item !== value));
-  };
-
   return (
     <div className="flex flex-wrap gap-1.5">
       {selectedJobFunction.map((value) => (
