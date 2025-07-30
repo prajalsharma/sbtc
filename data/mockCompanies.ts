@@ -45,7 +45,7 @@ export const mockCompanies = [
     description:
       "Onchain security network with bug bounties and audits protecting billions in web3/DeFi projects.",
     size: "11-50 employees",
-    industry: ["Blockchain Security"],
+    industry: ["Security"],
     location: ["Singapore"],
     image: "https://pbs.twimg.com/profile_images/1904479852733841408/N1hUWlg6_400x400.jpg",
   },
@@ -65,7 +65,7 @@ export const mockCompanies = [
     description:
       "Crypto wallet for StarkNet offering secure, user-friendly asset management and dApp connections.",
     size: "11-50 employees",
-    industry: ["Crypto Wallet", "Blockchain"],
+    industry: ["Wallet"],
     location: ["Tel Aviv, Israel"],
     image: "https://pbs.twimg.com/profile_images/1846554119777013760/FydsgAUR_400x400.jpg",
   },
@@ -75,7 +75,7 @@ export const mockCompanies = [
     description:
       "Web3 cybersecurity firm providing audits and cryptography reviews to secure DeFi and blockchain protocols.",
     size: "51-200 employees",
-    industry: ["Blockchain Security"],
+    industry: ["Security"],
     location: ["Remote (distributed)"],
     image: "https://pbs.twimg.com/profile_images/1715242418457747456/FkBeZCZ5_400x400.jpg",
   },
@@ -85,7 +85,7 @@ export const mockCompanies = [
     description:
       "API-driven treasury yield platform for European businesses optimizing cash management and returns.",
     size: "11-50 employees",
-    industry: ["DeFi"],
+    industry: ["RWA"],
     location: ["Paris, France"],
     image: "https://pbs.twimg.com/profile_images/1919771760875937792/IIKL6y3R_400x400.jpg",
   },
@@ -95,7 +95,7 @@ export const mockCompanies = [
     description:
       "Polish software dev company building scalable apps and contributing to open-source projects.",
     size: "201-500 employees",
-    industry: ["Software Development"],
+    industry: ["Infra & Tools"],
     location: ["Kraków, Poland"],
     image: "https://pbs.twimg.com/profile_images/1243176655172009986/Jgdl2m15_400x400.jpg",
   },
@@ -105,7 +105,7 @@ export const mockCompanies = [
     description:
       "Web3 security platform focusing on real-time threat detection and attack prevention.",
     size: "51-200 employees",
-    industry: ["Security Software"],
+    industry: ["Security"],
     location: ["Herzliya, Israel"],
     image: "https://pbs.twimg.com/profile_images/1576848429711560705/zWLmrreo_400x400.png",
   },
@@ -115,7 +115,7 @@ export const mockCompanies = [
     description:
       "Cloud blockchain infrastructure service providing fast APIs and tooling for Web3 developers and enterprises.",
     size: "100-200 employees",
-    industry: ["Blockchain Infrastructure"],
+    industry: ["Infra & Tools"],
     location: ["Miami, USA (remote)"],
     image: "https://pbs.twimg.com/profile_images/1875136807781662720/MJP7n4UN_400x400.jpg",
   },
@@ -125,7 +125,7 @@ export const mockCompanies = [
     description:
       "Blockchain node and API service offering reliable access to multiple chains for decentralized app development.",
     size: "51-200 employees",
-    industry: ["Blockchain", "API Services"],
+    industry: ["Infra & Tools"],
     location: ["Global (HQ Cyprus)"],
     image: "https://pbs.twimg.com/profile_images/1877312953776582656/g78tZlgn_400x400.jpg",
   },
