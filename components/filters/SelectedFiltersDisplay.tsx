@@ -7,14 +7,10 @@ import { useFilters } from "@/context/FiltersContext";
 interface Options {
   jobFunctionOptions: { value: string; label: string }[];
   jobTypeOptions: { value: string; label: string }[];
-  experienceOptions: { value: string; label: string }[];
+  experienceOptions?: { value: string; label: string }[];
 }
 
-const SelectedFiltersDisplay: React.FC<Options> = ({
-  jobFunctionOptions,
-  jobTypeOptions,
-  experienceOptions,
-}) => {
+const SelectedFiltersDisplay: React.FC<Options> = ({ jobFunctionOptions, jobTypeOptions }) => {
   const {
     selectedJobFunction,
     setSelectedJobFunction,
@@ -60,14 +56,7 @@ const SelectedFiltersDisplay: React.FC<Options> = ({
           onRemove={handleRemoveJobType}
         />
       ))}
-      {selectedExperience.map((value) => (
-        <FilterBadge
-          key={value}
-          value={value}
-          options={experienceOptions}
-          onRemove={handleRemoveExperience}
-        />
-      ))}
+
       {(selectedJobFunction.length > 0 ||
         selectedJobType.length > 0 ||
         selectedExperience.length > 0) && (

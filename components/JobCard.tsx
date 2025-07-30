@@ -44,6 +44,15 @@ const Card = ({ job }: JobProps) => {
     return diffInDays === 1 ? "1 day ago" : `${diffInDays} days ago`;
   };
 
+  const formatLocation = (location: string): string => {
+    if (!location || location === "Remote") return location === "Remote" ? "Global" : location;
+
+    const locations = location.split(",").map((loc) => loc.trim());
+    const uniqueLocations = [...new Set(locations)];
+
+    return uniqueLocations.join(", ");
+  };
+
   return (
     <div className="bg-[#1b1b1b] rounded-sm p-6 transition-shadow border border-[#333] shadow-lg hover:shadow-xl">
       <div className="flex gap-4">
@@ -135,10 +144,8 @@ const Card = ({ job }: JobProps) => {
           <div className="flex lg:flex-col items-end justify-between w-full h-full lg:basis-[30%]">
             {job.location && !excludedValues.includes(job.location) && (
               <div className="flex items-center gap-2 text-secondary/60">
-                <MapPin className="w-4 h-4" />
-                <span className="text-sm">
-                  {job.location === "Remote" ? "Global" : job.location}
-                </span>
+                <MapPin className="size-4" />
+                <span className="text-sm flex-1">{formatLocation(job.location)}</span>
               </div>
             )}
             <Link
