@@ -5,16 +5,7 @@ interface IndustryFilterProps {
   setSelectedIndustries: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const industries = [
-  "AI",
-  "API Services",
-  "Blockchain",
-  "Blockchain Security",
-  "DeFi",
-  "Infra & Tools",
-  "RWA",
-  "Wallet",
-];
+const industries = ["AI", "Blockchain", "Infra & Tools", "RWA", "Security", "Wallet"];
 
 export default function IndustryFilter({
   selectedIndustries,
