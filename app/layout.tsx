@@ -23,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased bg-body-background`}>
+      <body className={`${inter.className} antialiased bg-body-background`}> <script defer data-domain="sbtc-three.vercel.app" src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
         <FiltersProvider>
           <Header />
           <main className="min-h-screen">
